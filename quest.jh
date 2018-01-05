@@ -1,0 +1,68 @@
+entity  Schema{
+	ID Integer required,
+    code String required,
+    version Integer required,
+    version_date ZonedDateTime required,
+    description String required
+}
+
+entity SchemaField {
+	ID Integer required,
+    code String required,
+    description String required,
+    order Integer required,
+    type TypeEnum required,
+    value_list_code String
+}
+
+// an ignored cRegionomment
+/** not an ignored comment */
+entity SchemaAnswer {
+	ID Integer required,
+	creation_date ZonedDateTime required,
+	completion_date ZonedDateTime ,
+	flag_complete String
+}
+
+entity SchemaAnswerField {
+	ID Integer required,
+    value String
+}
+entity Person {
+	ID Integer required
+   
+}
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+enum TypeEnum {
+    CHAR, INTG, DATE, LIST
+}
+
+relationship OneToOne {
+	SchemaAnswerField{field} to SchemaField,
+    SchemaAnswer{person} to Person
+    
+}
+
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Schema{field} to SchemaField,
+    Schema{answer} to SchemaAnswer,
+    SchemaAnswer{answerField} to SchemaAnswerField
+	
+}
+
+
+// Set pagination options
+paginate SchemaAnswerField, SchemaField with infinite-scroll
+paginate Schema, SchemaAnswer with pagination
+
+
+// Set service options to all except few
+service all with serviceClass
+
