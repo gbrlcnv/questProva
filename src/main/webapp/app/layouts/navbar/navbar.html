@@ -32,6 +32,36 @@
                         </span>
                     </a>
                     <ul class="dropdown-menu" uib-dropdown-menu>
+                        <li ui-sref-active="active">
+                                <a ui-sref="schema-1" ng-click="vm.collapseNavbar()">
+                                    <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                                    <span data-translate="global.menu.entities.schema1">Schema 1</span>
+                                </a>
+                            </li>
+                        <li ui-sref-active="active">
+                                <a ui-sref="schema-field" ng-click="vm.collapseNavbar()">
+                                    <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                                    <span data-translate="global.menu.entities.schemaField">Schema Field</span>
+                                </a>
+                            </li>
+                        <li ui-sref-active="active">
+                                <a ui-sref="schema-answer" ng-click="vm.collapseNavbar()">
+                                    <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                                    <span data-translate="global.menu.entities.schemaAnswer">Schema Answer</span>
+                                </a>
+                            </li>
+                        <li ui-sref-active="active">
+                                <a ui-sref="schema-answer-field" ng-click="vm.collapseNavbar()">
+                                    <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                                    <span data-translate="global.menu.entities.schemaAnswerField">Schema Answer Field</span>
+                                </a>
+                            </li>
+                        <li ui-sref-active="active">
+                                <a ui-sref="person" ng-click="vm.collapseNavbar()">
+                                    <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                                    <span data-translate="global.menu.entities.person">Person</span>
+                                </a>
+                            </li>
                         <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                     </ul>
                 </li>

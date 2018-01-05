@@ -1,0 +1,26 @@
+{
+    "questProvaApp": {
+        "schema1" : {
+            "home": {
+                "title": "Schema 1 S",
+                "createLabel": "Create a new Schema 1",
+                "createOrEditLabel": "Create or edit a Schema 1"
+            },
+            "created": "A new Schema 1 is created with identifier {{ param }}",
+            "updated": "A Schema 1 is updated with identifier {{ param }}",
+            "deleted": "A Schema 1 is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Schema 1 {{ id }}?"
+            },
+            "detail": {
+                "title": "Schema 1"
+            },
+            "code": "Code",
+            "version": "Version",
+            "versionDate": "Version Date",
+            "description": "Description",
+            "field": "Field",
+            "answer": "Answer"
+        }
+    }
+}

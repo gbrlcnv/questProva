@@ -1,0 +1,93 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="mySchemaFieldLabel" data-translate="questProvaApp.schemaField.home.createOrEditLabel">Create or edit a Schema Field</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.schemaField.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.schemaField.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="questProvaApp.schemaField.code" for="field_code">Code</label>
+            <input type="text" class="form-control" name="code" id="field_code"
+                    ng-model="vm.schemaField.code"
+                    required/>
+            <div ng-show="editForm.code.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.code.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="questProvaApp.schemaField.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.schemaField.description"
+                    required/>
+            <div ng-show="editForm.description.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.description.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="questProvaApp.schemaField.order" for="field_order">Order</label>
+            <input type="number" class="form-control" name="order" id="field_order"
+                    ng-model="vm.schemaField.order"
+                    required/>
+            <div ng-show="editForm.order.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.order.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.order.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="questProvaApp.schemaField.type" for="field_type">Type</label>
+            <select class="form-control" name="type" ng-model="vm.schemaField.type" id="field_type" required>
+                <option value="CHAR" data-translate="questProvaApp.TypeEnum.CHAR">CHAR</option>
+                <option value="INTG" data-translate="questProvaApp.TypeEnum.INTG">INTG</option>
+                <option value="DATE" data-translate="questProvaApp.TypeEnum.DATE">DATE</option>
+                <option value="LIST" data-translate="questProvaApp.TypeEnum.LIST">LIST</option>
+            </select>
+            <div ng-show="editForm.type.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.type.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="questProvaApp.schemaField.valueListCode" for="field_valueListCode">Value List Code</label>
+            <input type="text" class="form-control" name="valueListCode" id="field_valueListCode"
+                    ng-model="vm.schemaField.valueListCode"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="questProvaApp.schemaField.schema1" for="field_schema1">Schema 1</label>
+            <select class="form-control" id="field_schema1" name="schema1" ng-model="vm.schemaField.schema1" ng-options="schema1 as schema1.id for schema1 in vm.schema1s track by schema1.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

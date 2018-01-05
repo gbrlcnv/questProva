@@ -1,0 +1,53 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "field",
+            "otherEntityName": "schemaField",
+            "otherEntityRelationshipName": "schema1"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "answer",
+            "otherEntityName": "schemaAnswer",
+            "otherEntityRelationshipName": "schema1"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "version",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "versionDate",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20180105131436",
+    "entityTableName": "schema_1",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

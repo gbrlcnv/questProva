@@ -1,0 +1,23 @@
+{
+    "questProvaApp": {
+        "schemaAnswerField" : {
+            "home": {
+                "title": "Schema Answer Fields",
+                "createLabel": "Create a new Schema Answer Field",
+                "createOrEditLabel": "Create or edit a Schema Answer Field"
+            },
+            "created": "A new Schema Answer Field is created with identifier {{ param }}",
+            "updated": "A Schema Answer Field is updated with identifier {{ param }}",
+            "deleted": "A Schema Answer Field is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Schema Answer Field {{ id }}?"
+            },
+            "detail": {
+                "title": "Schema Answer Field"
+            },
+            "value": "Value",
+            "schemaAnswer": "Schema Answer",
+            "field": "Field"
+        }
+    }
+}

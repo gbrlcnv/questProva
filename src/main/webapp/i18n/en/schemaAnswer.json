@@ -1,0 +1,26 @@
+{
+    "questProvaApp": {
+        "schemaAnswer" : {
+            "home": {
+                "title": "Schema Answers",
+                "createLabel": "Create a new Schema Answer",
+                "createOrEditLabel": "Create or edit a Schema Answer"
+            },
+            "created": "A new Schema Answer is created with identifier {{ param }}",
+            "updated": "A Schema Answer is updated with identifier {{ param }}",
+            "deleted": "A Schema Answer is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Schema Answer {{ id }}?"
+            },
+            "detail": {
+                "title": "Schema Answer"
+            },
+            "creationDate": "Creation Date",
+            "completionDate": "Completion Date",
+            "flagComplete": "Flag Complete",
+            "schema1": "Schema 1",
+            "person": "Person",
+            "answerField": "Answer Field"
+        }
+    }
+}

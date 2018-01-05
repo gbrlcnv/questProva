@@ -1,0 +1,26 @@
+{
+    "questProvaApp": {
+        "schema1" : {
+            "home": {
+                "title": "Schema1S",
+                "createLabel": "Genera un nuovo Schema 1",
+                "createOrEditLabel": "Genera o modifica un Schema 1"
+            },
+            "created": "&Egrave; stato generato un nuovo Schema 1 con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Schema 1 identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Schema 1 con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Schema 1 {{ id }}?"
+            },
+            "detail": {
+                "title": "Schema 1"
+            },
+            "code": "Code",
+            "version": "Version",
+            "versionDate": "Version Date",
+            "description": "Description",
+            "field": "Field",
+            "answer": "Answer"
+        }
+    }
+}

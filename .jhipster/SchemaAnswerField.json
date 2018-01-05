@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "schemaAnswer",
+            "otherEntityName": "schemaAnswer",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "field",
+            "otherEntityName": "schemaField",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "schemaAnswerField"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "value",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180105131439",
+    "entityTableName": "schema_answer_field",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}
