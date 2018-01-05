@@ -1,0 +1,68 @@
+<div>
+    <h2 data-translate="questProvaApp.schemaField.home.title">Schema Fields</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="schema-field.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="questProvaApp.schemaField.home.createLabel">
+                        Create new Schema Field
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="code"><span data-translate="questProvaApp.schemaField.code">Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="description"><span data-translate="questProvaApp.schemaField.description">Description</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="order"><span data-translate="questProvaApp.schemaField.order">Order</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="type"><span data-translate="questProvaApp.schemaField.type">Type</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="valueListCode"><span data-translate="questProvaApp.schemaField.valueListCode">Value List Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="schema1.id"><span data-translate="questProvaApp.schemaField.schema1">Schema 1</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                <tr ng-repeat="schemaField in vm.schemaFields track by schemaField.id">
+                    <td><a ui-sref="schema-field-detail({id:schemaField.id})">{{schemaField.id}}</a></td>
+                    <td>{{schemaField.code}}</td>
+                    <td>{{schemaField.description}}</td>
+                    <td>{{schemaField.order}}</td>
+                    <td data-translate="{{'questProvaApp.TypeEnum.' + schemaField.type}}">{{schemaField.type}}</td>
+                    <td>{{schemaField.valueListCode}}</td>
+                    <td>
+                        <a ui-sref="schema-1-detail({id:schemaField.schema1.id})">{{schemaField.schema1.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="schema-field-detail({id:schemaField.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="schema-field.edit({id:schemaField.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="schema-field.delete({id:schemaField.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

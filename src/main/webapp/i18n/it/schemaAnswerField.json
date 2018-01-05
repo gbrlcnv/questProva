@@ -1,0 +1,23 @@
+{
+    "questProvaApp": {
+        "schemaAnswerField" : {
+            "home": {
+                "title": "SchemaAnswerFields",
+                "createLabel": "Genera un nuovo Schema Answer Field",
+                "createOrEditLabel": "Genera o modifica un Schema Answer Field"
+            },
+            "created": "&Egrave; stato generato un nuovo Schema Answer Field con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Schema Answer Field identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Schema Answer Field con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Schema Answer Field {{ id }}?"
+            },
+            "detail": {
+                "title": "Schema Answer Field"
+            },
+            "value": "Value",
+            "schemaAnswer": "Schema Answer",
+            "field": "Field"
+        }
+    }
+}

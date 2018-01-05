@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "schema1",
+            "otherEntityName": "schema1",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "person",
+            "otherEntityName": "person",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "schemaAnswer"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "answerField",
+            "otherEntityName": "schemaAnswerField",
+            "otherEntityRelationshipName": "schemaAnswer"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "creationDate",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "completionDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "flagComplete",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180105131438",
+    "entityTableName": "schema_answer",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

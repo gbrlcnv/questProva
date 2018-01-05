@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="questProvaApp.schemaField.detail.title">Schema Field</span> {{vm.schemaField.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="questProvaApp.schemaField.code">Code</span></dt>
+        <dd>
+            <span>{{vm.schemaField.code}}</span>
+        </dd>
+        <dt><span data-translate="questProvaApp.schemaField.description">Description</span></dt>
+        <dd>
+            <span>{{vm.schemaField.description}}</span>
+        </dd>
+        <dt><span data-translate="questProvaApp.schemaField.order">Order</span></dt>
+        <dd>
+            <span>{{vm.schemaField.order}}</span>
+        </dd>
+        <dt><span data-translate="questProvaApp.schemaField.type">Type</span></dt>
+        <dd>
+            <span data-translate="{{'questProvaApp.TypeEnum.' + vm.schemaField.type}}">{{vm.schemaField.type}}</span>
+        </dd>
+        <dt><span data-translate="questProvaApp.schemaField.valueListCode">Value List Code</span></dt>
+        <dd>
+            <span>{{vm.schemaField.valueListCode}}</span>
+        </dd>
+        <dt><span data-translate="questProvaApp.schemaField.schema1">Schema 1</span></dt>
+        <dd>
+            <a ui-sref="schema-1-detail({id:vm.schemaField.schema1.id})">{{vm.schemaField.schema1.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="schema-field-detail.edit({id:vm.schemaField.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

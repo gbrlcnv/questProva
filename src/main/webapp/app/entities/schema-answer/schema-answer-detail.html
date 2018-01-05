@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="questProvaApp.schemaAnswer.detail.title">Schema Answer</span> {{vm.schemaAnswer.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="questProvaApp.schemaAnswer.creationDate">Creation Date</span></dt>
+        <dd>
+            <span>{{vm.schemaAnswer.creationDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="questProvaApp.schemaAnswer.completionDate">Completion Date</span></dt>
+        <dd>
+            <span>{{vm.schemaAnswer.completionDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="questProvaApp.schemaAnswer.flagComplete">Flag Complete</span></dt>
+        <dd>
+            <span>{{vm.schemaAnswer.flagComplete}}</span>
+        </dd>
+        <dt><span data-translate="questProvaApp.schemaAnswer.schema1">Schema 1</span></dt>
+        <dd>
+            <a ui-sref="schema-1-detail({id:vm.schemaAnswer.schema1.id})">{{vm.schemaAnswer.schema1.id}}</a>
+        </dd>
+        <dt><span data-translate="questProvaApp.schemaAnswer.person">Person</span></dt>
+        <dd>
+            <a ui-sref="person-detail({id:vm.schemaAnswer.person.id})">{{vm.schemaAnswer.person.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="schema-answer-detail.edit({id:vm.schemaAnswer.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>
