@@ -1,0 +1,7 @@
+entity  Schema{
+	ID Integer required,
+    code String required,
+    version Integer required,
+    version_date ZonedDateTime required,
+    description String required
+}
