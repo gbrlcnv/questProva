@@ -1,0 +1,62 @@
+entity  Schema1{
+	ID Integer required,
+    code String required,
+    version Integer required,
+    versionDate ZonedDateTime required,
+    description String required
+}
+
+entity SchemaField {
+	ID Integer required,
+    code String required,
+    description String required,
+    order Integer required,
+    type TypeEnum required,
+    valueListCode String
+}
+
+entity SchemaAnswer {
+	ID Integer required,
+	creationDate ZonedDateTime required,
+	completionDate ZonedDateTime ,
+	flagComplete String
+}
+
+entity SchemaAnswerField {
+	ID Integer required,
+    value String
+}
+entity Person {
+	ID Integer required
+   
+}
+
+enum TypeEnum {
+    CHAR, INTG, DATE, LIST
+}
+
+relationship OneToOne {
+	SchemaAnswerField{field} to SchemaField,
+    SchemaAnswer{person} to Person
+    
+}
+
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Schema1{field} to SchemaField,
+    Schema1{answer} to SchemaAnswer,
+    SchemaAnswer{answerField} to SchemaAnswerField
+	
+}
+
+
+// Set pagination options
+paginate SchemaAnswerField, SchemaField with infinite-scroll
+paginate Schema1, SchemaAnswer with pagination
+
+
+// Set service options to all except few
+service all with serviceClass
+
